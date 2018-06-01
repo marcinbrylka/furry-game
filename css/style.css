@@ -46,22 +46,16 @@ section#score {
 }
 
 
-section#score div, #over > div {
+.scoreDiv, .restartDiv {
   width: 10em;
   height: 3em;
   text-align: center;
   padding: 0.5em;
   background-color: rgba(211,211,211, 0.75);
-  border: 1px solid lightgray;
+  /*border: 1px solid lightgray;*/
   border-radius: 1px;
   box-shadow: 1px 1px 5px 1px lightgray;
   margin: 1em auto;
-}
-
-.restart {
-    width: 200px;
-    height: 200px;
-    border: 1px solid deeppink;
 }
 
 .furry {
@@ -70,7 +64,7 @@ section#score div, #over > div {
   background-size: cover;
 }
 .coin {
-  background-image: url('../images/coin.png');
+  background-image: url('../images/star_2.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -97,6 +91,14 @@ section#over pre {
   font-size: 10px;
   font-weight: bolder;
   color: brown;
+}
+
+.restartDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
 }
 
 .invisible {

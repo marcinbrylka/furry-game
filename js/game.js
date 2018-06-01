@@ -73,6 +73,25 @@ var Game = function () {
 
     });
 
+    this.increaseFurrySpeed = function () {
+        if (this.score >= 10 && this.score < 20) {
+            clearInterval(self.idSetInterval);
+            this.idSetInterval = setInterval(function () {
+                self.moveFurry();
+            }, 200);
+        } else if (this.score >= 20 && this.score < 30) {
+            clearInterval(self.idSetInterval);
+            this.idSetInterval = setInterval(function () {
+                self.moveFurry();
+            }, 150);
+        } else if (this.score >= 30) {
+            clearInterval(self.idSetInterval);
+            this.idSetInterval = setInterval(function() {
+                self.moveFurry();
+            }, 100);
+        }
+    };
+
     this.checkCoinCollision = function () {
         if (this.furry.x === this.coin.x && this.furry.y === this.coin.y) {
             document.querySelector(".coin").classList.remove("coin");
@@ -80,15 +99,19 @@ var Game = function () {
             document.querySelector("#score strong").innerHTML = this.score;
             this.coin = new Coin();
             this.showCoin();
+            this.increaseFurrySpeed();
         }
     };
-
     this.gameOver = function () {
         if (this.furry.x < 0 || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9) {
             clearInterval(this.idSetInterval);
             document.getElementById('over').classList.remove('invisible');
             document.querySelector("#over strong").innerHTML = this.score;
             this.hideVisibleFurry();
+
+            document.querySelector(".restartDiv").addEventListener("click", function () {
+                window.location.reload();
+            })
         }
 
     };

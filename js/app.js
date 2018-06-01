@@ -4,4 +4,3 @@ var game = new Game();
 game.startGame();
 game.showFurry();
 game.showCoin();
-
