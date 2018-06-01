@@ -4,9 +4,8 @@
   "description": "a simple game in js",
   "main": "js/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-//    "dev": "webpack --mode development",
-//    "prod": "webpack --mode production"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack js/app.js --output js/out.js"
   },
   "repository": {
     "type": "git",
